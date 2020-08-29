@@ -46,27 +46,27 @@
 
         <TextView
             android:id="@+id/puntajetxt"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
             android:layout_marginBottom="20dp"
             android:text="Puntaje:"
             android:textColor="#1B1A1A"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/puntajetxt2"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/puntajetxt2"
-            android:layout_width="0dp"
+            android:id="@+id/puntaje"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="130dp"
             android:layout_marginBottom="20dp"
             android:text="0"
             android:textColor="#1B1A1A"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/puntajetxt" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <EditText
             android:id="@+id/respuesta"
