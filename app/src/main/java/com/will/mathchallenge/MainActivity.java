@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
 
     private TextView pregunta;
     private EditText respuesta;
@@ -17,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private Pregunta preguntita;
     private String convert;
     private int p=0;
-    private String pnew;
+
+
 
 
     @Override
@@ -32,37 +35,40 @@ public class MainActivity extends AppCompatActivity {
         responder= findViewById(R.id.responder);
         respuesta= findViewById(R.id.respuesta);
         pregunta= findViewById(R.id.pregunta);
-
         preguntita= new Pregunta();
 
 
-
+        //LLamo al metodo que contiene mi pregunta random y lo casteo a String
         preguntita.numeros();
         pregunta.setText(""+preguntita.getA() + " " + "+"+" "+preguntita.getB());
         convert = Integer.toString(preguntita.getC());
-        pnew= Integer.toString(p);
 
 
 
 
+        //OnClick
         responder.setOnClickListener(
         (v) -> {
 
             String test = respuesta.getText().toString();
-            //Toast.makeText(this,test+"",Toast.LENGTH_LONG).show();
-Log.e("intento",""+convert);
-            Log.e("averlan","hola"+ test);
-            Log.e("ss","inss"+ pnew);
 
+            //Log.e("intento",""+convert);
+            //Log.e("averlan","hola"+ test);
 
-     if(convert.equals(test)){
-            //preguntita.numeros();
+            //Validacion de respuesta
+            if(convert.equals(test)){
+
          p++;
             puntaje.setText(""+p);
+         Toast.makeText(this,"CORRECTOOO",Toast.LENGTH_LONG).show();
 
          preguntita.numeros();
          pregunta.setText(""+preguntita.getA() + " " + "+"+" "+preguntita.getB());
-        }
+         convert = Integer.toString(preguntita.getC());
+
+        }else{
+         Toast.makeText(this,"INCORRECTOOO",Toast.LENGTH_LONG).show();
+     }
 
         });
 
